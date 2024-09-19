@@ -1,6 +1,4 @@
-s=int(input("Введите сумму вклада: "))
-pro=int(input("Введите количестов месяцев вклада: "))
-pro += 1
-for i in range(1, pro):
-    s = s*(107/100)
-print(s)
+b = 3
+for i in range (6):
+    b=b*3
+    print(b)
