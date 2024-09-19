@@ -13,6 +13,6 @@ for p in range(10):
         s+=ap
         i+=1
     import math
-    y=(1+2*x**2)*math.exp(o)
+    y=(1+2*x*x)*math.exp(o)
     print('x =',x,';',"s =", s,';', 'y =',y)
-    x=x+0.1
+    x = x + 0.1
