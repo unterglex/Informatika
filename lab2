@@ -30,22 +30,22 @@ else: print("Квадрат с площадью 0.74 не сможет поме�
 
 # Уровень 2
 x=0
-nado=input('Vvedite vremya normativa v secundah: ')
+nado=input('Введите время норматива в секундах: ')
 for i in range(30):
-    name=input('Vvedite imya sportsmena: ')
-    rez=int(input('Vvedite rezultat sportsmena: '))
+    name=input('Введите имя спортсмена: ')
+    rez=int(input('Введите результат спортсмена: '))
     if rez>=nado:
         x+=1
-print('Normativ vipolnili', x, 'chelovek')
+print('Норматив выполнили', x, 'человек')
 
 
 #Уровень 3
 x=0
 a=True
-nado=input('Vvedite vremya normativa v secundah: ')
-while a = True:
-    name=input('Vvedite imya sportsmena: ')
-    rez=int(input('Vvedite rezultat sportsmena: '))
+nado=input('Введите время в секундах: ')
+while a:
+    name=input('Введите имя спортсмена: ')
+    rez=int(input('Введите результат спортсмена: '))
     if rez>=nado:
         x+=1
     last=input('Etot chelovek posledniy? Otvet(da or net): ')
