@@ -37,3 +37,18 @@ for i in range(30):
     if rez>=nado:
         x+=1
 print('Normativ vipolnili', x, 'chelovek')
+
+
+#Уровень 3
+x=0
+a=True
+nado=input('Vvedite vremya normativa v secundah: ')
+while a = True:
+    name=input('Vvedite imya sportsmena: ')
+    rez=int(input('Vvedite rezultat sportsmena: '))
+    if rez>=nado:
+        x+=1
+    last=input('Etot chelovek posledniy? Otvet(da or net): ')
+    if last=da:
+        a=False
+print('Normativ vipolnili', x, 'chelovek')
