@@ -1,0 +1,14 @@
+from random import seed, randint
+seed(13)
+x1=randint(1,10)
+x2=randint(1,13)
+print(x1,x2)
+# Уровень 1
+r=int(input('Введите площадь круга:'))
+s=int(input('Введите площадь квадрата:'))
+import math
+Rr = math.sqrt(r/math.pi)
+Sr = math.sqrt(s)/2
+if Rr > Sr:
+    print("Квадрат поместится в круг")
+else: print("Квадрат не сможет поместиться в круг")
