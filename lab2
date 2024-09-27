@@ -26,3 +26,14 @@ Sr = math.sqrt(s)/2
 if Rr > Sr:
     print("Квадрат c площадью 0.74 поместится в круг площадью 0.86")
 else: print("Квадрат с площадью 0.74 не сможет поместиться в круг площадью 0.86")
+
+
+# Уровень 2
+x=0
+nado=input('Vvedite vremya normativa v secundah: ')
+for i in range(30):
+    name=input('Vvedite imya sportsmena: ')
+    rez=int(input('Vvedite rezultat sportsmena: '))
+    if rez>=nado:
+        x+=1
+print('Normativ vipolnili', x, 'chelovek')
