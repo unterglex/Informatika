@@ -48,3 +48,23 @@ x2=randint(1,9)
 x3=randint(1,14)
 print(x1,x2,x3)
 30 3 2
+
+zad 30
+b=[[1,0,-2,45,2],[198,-12,45,-87,1],[21,74,-78,74,43],[9,98,72,-19,38],[1,4,73,74,32]]
+max=b[0][0]
+minus=0
+print('Изначальная матрица:', b)
+for i in range(5):
+    for j in range(5):
+        if b[i][j]<0:
+            if minus<j:
+                break
+            else:minus=j
+        if i==j:
+            if b[i][j]>max:
+                max=b[i][j]
+                stroka=j
+b[0][minus],b[0][stroka],b[1][minus],b[1][stroka],b[2][minus],b[2][stroka],b[3][minus],b[3][stroka],b[4][minus],b[4][stroka]=
+print('Строка с наибольшим значением в диагонали:',stroka+1)
+print('Строка с первым отрицательным значением в 3 столбце: ',minus+1)
+print('Конечная матрица',b)
