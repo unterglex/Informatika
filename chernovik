@@ -39,3 +39,12 @@ for i in range(5):
             a[i][ind-1]=int(a[i][ind-1])*2
         else: a[i][ind+1]= itn(a[i][ind+1])*2
 print(a)
+
+
+from random import seed, randint
+seed(413)
+x1=randint(1,33)
+x2=randint(1,9)
+x3=randint(1,14)
+print(x1,x2,x3)
+30 3 2
