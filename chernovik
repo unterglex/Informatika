@@ -54,8 +54,12 @@ def delete_stolb(a, stolb):
 print('Максимальный элемент под главной диагональю:', max_value)
 print('Минимальный элемент над главной диагональю:', min_value)
 print('Конечная матрица:')
-for y in delete_stolb(delete_stolb(A, max_stolb), min_stolb - 1):
-    print(y)
-if
-elif
-elif
+if max_stolb>min_stolb:
+    for y in delete_stolb(delete_stolb(A, max_stolb), min_stolb):
+        print(y)
+elif min_stolb==max_stolb:
+    for y in delete_stolb(delete_stolb(A, max_stolb)):
+        print(y)
+elif max_stolb<min_stolb:
+    for y in delete_stolb(delete_stolb(A, max_stolb), min_stolb - 1):
+        print(y)
