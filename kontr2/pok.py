@@ -1,7 +1,11 @@
-from random import seed, randint
-seed(3113)
-x1=randint(1,33)
-x2=randint(1,28)
-x3=randint(1,6)
-print(x1,x2,x3)
-
+'''Задание 3 первого уровня. Найти след (сумму диагональный элементов) квадратной матрицы А размером 4х4. '''
+A = [[1,31,94,5],[7,-2,18,3],[9,12,-1,4],[7,21,32,4]]
+s=0
+for i in range(len(A)):
+    for j in range(len(A)):
+        if i==j:
+            s+=A[i][j]
+print('Исходная матрица: ')
+for z in A:
+    print(z)
+print('\nСлед матрицы: ',s)
