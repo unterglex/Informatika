@@ -1,3 +1,9 @@
+from random import seed, randint
+seed(213)
+x=randint(1,9)
+print('Рандом:',x)
+'''На основании результатов соревнований по прыжкам в длину (фамилии и результаты трёх попыток) составить итоговый протокол соревнований, 
+считая, что в зачёт идёт лучший результат.'''
 def read_data(filename):
     with open(filename, 'r', encoding='utf-8') as file: #без утф-8 у меня китайские иероглифы
         lines = file.readlines()
