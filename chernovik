@@ -8,58 +8,72 @@ x3=randint(1,6)
 print(x1,x2,x3)
 2 10 6
 
+import random
+from math import sqrt
+import matplotlib.pyplot as plt
 
-'Уровень 1, задание 2'
-"Два треугольника заданы длинами своих сторон а, b и с."
-"Определить треугольник с большей площадью, вычисляя площади треугольников по формуле Герона."
+p = 0.8
+xMin1, yMin1 = 0, 0
+xMax1, yMax1 = 50, 50
+xMin2, yMin2 = 25, 25
+xMax2, yMax2 = 75, 75
+k = 3
+pointsCount1 = 50
+pointsCount2 = 50
+x = []
+y = []
+for i in range(pointsCount1):
+    x.append([random.uniform(xMin1, xMax1), random.uniform(yMin1, yMax1)])
+    y.append(1)
+for i in range(pointsCount2):
+    x.append([random.uniform(xMin2, xMax2), random.uniform(yMin2, yMax2)])
+    y.append(2)
 
-A = [1,3,3]
-B = [4,5,6]
-def ploshad(a):
-    summa=0
-    import math
-    for i in range(len(a)):
-        summa+=a[i]
-        p=summa/2
-    s = math.sqrt(p*(p-a[0])*(p-a[1])*(p-a[2]))
-    return(s)
-print(f'Площадь треугольника со стронами {A} равна:', ploshad(A))
-print(f'Площадь треугольника со стронами {B} равна:', ploshad(B))
-#Если получаем 0, либо ошибку, то такого треугольника не существует.
 
-'Уровень 2, задание 10'
-"В заданной квадратной матрице найти максимальный элемент среди элементов, расположенных ниже главной диагонали (включая диагональ), "
-"и минимальный элемент среди элементов, расположенных выше главной диагонали. "
-"Удалить столбцы, в которых они находятся. Удаление столбца оформить в виде метода."
+def train_test_split(x, y, p):
+    x_train = []
+    y_train = []
+    x_test = []
+    y_test = []
+    for i in range(round((pointsCount1 + pointsCount2) * p)):
+        x_train.append(x[i])
+        y_train.append(y[i])
+    for j in range(round((pointsCount1 + pointsCount2) * (1 - p))):
+        x_test.append(x[j])
+        y_test.append(y[j])
+    return x_train, x_test, y_train, y_test
 
-A = [[1,2,3,994,5],[7,3,-2,8,3],[92,76,12,-1,4],[7,3,2,3,4],[72,52,8,9,10]]
-for z in A:
-    print(z)
-max_value = A[0][0]
-min_value = A[0][0]
-for i in range(len(A)):
-    for j in range(len(A)):
-        if i>=j:
-            if max_value<A[i][j]:
-                max_value = A[i][j]
-                max_stolb=j
-        else:
-            if min_value>A[i][j]:
-                min_value=A[i][j]
-                min_stolb=j
-def delete_stolb(a, stolb):
-    for k in a:
-        k.pop(stolb)
-    return a
-print('Максимальный элемент под главной диагональю:', max_value)
-print('Минимальный элемент над главной диагональю:', min_value)
-print('Конечная матрица:')
-if max_stolb>min_stolb:
-    for y in delete_stolb(delete_stolb(A, max_stolb), min_stolb):
-        print(y)
-elif min_stolb==max_stolb:
-    for y in delete_stolb(delete_stolb(A, max_stolb)):
-        print(y)
-elif max_stolb<min_stolb:
-    for y in delete_stolb(delete_stolb(A, max_stolb), min_stolb - 1):
-        print(y)
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, p)
+
+def fit(x_train, y_train, x_test, k):
+    import heapq
+    o12 = []
+    x12 = []
+    r=[]
+    y_predict = []
+    for i in range(len(x_test)):
+        for j in range(len(x_train)):
+            r.append(((x_train[j][1])-x_test[i][0])**2+(x_train[j][1]-x_test[i][1])**2)**0,5
+        a=heapq.nsmallest(k,r)
+        indi = []
+        for i in range(len(a)):
+            indi.append(r.index(a[i]))
+            if y_train[indi[i]]==1:
+                o12+=1
+            else: 
+                x12+=1
+        if o12>x12:
+            y_predict.append(1)
+        else: 
+            y.predict.apppend(2)
+        print(indi)
+    return(y_predict)
+
+print(fit(x_train, y_train,x_test, k))
+sovp=0
+for i in range(len(y_predict)):
+    if y_predict[i]==y_test[i]:
+        sovp+=1
+accuracy=sovp/len(y_predict)
+print(accuracy)
