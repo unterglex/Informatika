@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import random
+n = 0.01
+k,b = 10, 10
+x=np.linspace(0, 10, 50)
+y=[]
+for i in range(len(x)):
+    y.append(x[i]+random.uniform(-1, 1))
+fig, ax=plt.subplots()
+ax.scatter(x, y)
+plt.show()
+for i in range(100):
+    y_predict=k*x+b
+    djdk=-2/50*(x*(y-y_predict))
+    djdb=-2/50*(y-y_predict)
+    k=k-n*djdk
+    b=b-n*djdb
+fig, ax=plt.subplots()
+ax.scatter(x, y)
+ax.plot(y_predict, y_predict)
+plt.show()
